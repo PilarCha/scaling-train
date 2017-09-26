@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heeey Frieeend</title>
+  </head>
+  <body>
+    <h3>Welcome {{unique.name}}</h3>
+    <h3><a href="/logout">Logout</a></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>email</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {%for a in friendship%}
+        <tr>
+          <td>{{a.friend.name}}</td>
+          <td>{{a.friend.email}}</td>
+          <td><a href="/delete/{{a.id}}">Remove as friend</a></td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>email</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {%for char in person%}
+          <td><a href="/show/{{char.id}}">{{char.name}}</a></td>
+          <td>{{char.email}}</td>
+          <td><a href="/add/{{char.id}}">add</a></td>
+        </tr>
+        {%endfor%}
+      </tbody>
+
+    </table>
+
+  </body>
+</html>
